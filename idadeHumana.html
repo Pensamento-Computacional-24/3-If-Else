@@ -9,15 +9,27 @@
     */
 
     // Entrada de Dados
-
-
+    const fatorP = 5, fatorM = 6, fatorG = 7;
+    const cao = prompt("Digite o porte do cão: P/M/G").toUpperCase();
+    const idade = parseInt(prompt("Digite a idade do cão:"));
 
     // Processamento
+    let mensagem;
 
+    if (cao == "P")
+        mensagem = `O seu cão possui incríveis ${idade*fatorP} anos.`;
+
+    else if (cao == "M")
+        mensagem = `O seu cão possui incríveis ${idade*fatorM} anos.`;
+
+    else if (cao == "G")
+        mensagem = `O seu cão possui incríveis ${idade*fatorG} anos.`;
+
+    else mensagem = "Digite um porte válido.";
 
 
     // Saída de Dados
-    
+    document.write(mensagem);
 
 
 </script>
