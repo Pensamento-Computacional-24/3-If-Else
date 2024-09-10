@@ -8,32 +8,43 @@
     */
 
     // Entrada de Dados
-    num1 = parseInt(input("num1"));
-    num2 = parseInt(input("num2"));
-    op = input("+, -, *, /");
+    let num1 = parseFloat(prompt("Digite o primeiro número:"));
+    let num2 = parseFloat(prompt("Digite o segundo número:"));
+    let op = prompt("Digite a operação: +, -, *, /");
 
     // Processamento
-    if (op == "+"){
-        num1 += num2;
-    }else if (op == "-"){
-        num1 -= num2;
-    }else if (op == "*"){
-        num1 *= num2;
-    }else if (op == "/"){
-        num1 /= num2;
-    }else alert("Operação Inválida");
+    let mensagem;
 
-    if (num1 >0) Alert ("Positivo")
-    else if (num1 <0) Alert ("Negativo")
-    else Alert ("Neutro")
-    
-    if (num1 % 2==0) Alert ("Par")
-    else Alert ("Impar")
-        
-if (num1 -parseInt (num1) >0) alert ("decimal") 
-    else alert ("inteiro")
+    if (op == "+") num1 += num2;
+    else if (op == "-") num1 -= num2;
+    else if (op == "*") num1 *= num2;
+
+    else if (op == "/") {
+        if (num1 == 0) mensagem = `Não é possível dividir zero <br>`;
+        else if (num2 == 0) mensagem = `Não é possível dividir por zero <br>`;
+        else {
+            num1 /= num2;
+        }
+    }else mensagem = "Digite uma operação válida.";
+
+
+    if (mensagem == undefined){
+        mensagem = `O número ${num1.toFixed(3)} é:<br>`;
+
+        if (parseInt(num1) % 2 == 0) mensagem += "Par, ";
+        else mensagem += "Ímpar, ";
+
+        if (num1 > 0) mensagem += "positivo e ";
+        else if (num1 < 0) mensagem += "negativo e ";
+        else mensagem += "neutro e ";
+
+        if (num1 - parseInt(num1) == 0) mensagem += "inteiro.";
+        else mensagem += "decimal.";
+    }
+
+
     // Saída de Dados
-    
+    document.write(mensagem);
 
 
 </script>
