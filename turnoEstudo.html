@@ -12,15 +12,14 @@
     */
 
     // Entrada de Dados
+    const turno = prompt("Escolha o seu turno de estudo: M/V/N").toUpperCase();
 
 
-
-    // Processamento
-
-
-
-    // Saída de Dados
-    
+    // Processamento e Saída de Dados
+    if (turno == "M") document.write("Bom dia!");
+    else if (turno == "V") document.write("Boa tarde!");
+    else if (turno == "N") document.write("Boa noite!");
+    else document.write("Turno inválido.");
 
 
 </script>
